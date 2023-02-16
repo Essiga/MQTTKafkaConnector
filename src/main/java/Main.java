@@ -49,7 +49,7 @@ public class Main {
         System.out.println("test");
         MQTTKafkaAdapter adapter = new MQTTKafkaAdapter(UUID.randomUUID().toString(), "tcp://vps-103973c9.vps.ovh.net:1883", producer);
 
-        adapter.handleMessagesFromTopic("test", 10);
+        adapter.handleMessagesFromTopic("x", 10);
 
     }
 }

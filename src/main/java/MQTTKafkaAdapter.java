@@ -35,7 +35,7 @@ public class MQTTKafkaAdapter {
     public void handleMessagesFromTopic(String topicName, int numberOfMessages){
         CountDownLatch receivedSignal = new CountDownLatch(numberOfMessages);
         try {
-            subscriber.subscribe(topicName, (topic, msg) -> {
+            subscriber.subscribe("esp32/x", (topic, msg) -> {
                 byte[] payload = msg.getPayload();
                 // ... payload handling omitted
                 kafkaProducer.send(new ProducerRecord<String, String>(topicName, null, new String(payload, StandardCharsets.UTF_8)));
